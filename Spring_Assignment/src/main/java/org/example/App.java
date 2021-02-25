@@ -3,6 +3,8 @@ package org.example;
 import org.example.ComponentScanConfig.AppConfig;
 import org.example.dao.StudentDao;
 import org.example.model.Student;
+import org.example.util.ScannerConfiguration;
+import org.example.util.ScannerInputService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 
@@ -27,6 +29,11 @@ public class App {
         System.out.println("-----------------------------------------------");
         System.out.println("Finding All");
         dao.findAll().forEach(System.out::println);
+        System.out.println("-------------------------------     Part 2     --------------------------------------------");
+        AnnotationConfigApplicationContext context1 = new AnnotationConfigApplicationContext(ScannerConfiguration.class);
+        ScannerInputService sc =  context1.getBean("scannerInputService", ScannerInputService.class);
+        System.out.println(sc.getInt());
+        System.out.println(sc.getString());
 
   }
 }
