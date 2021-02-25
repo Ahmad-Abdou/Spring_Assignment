@@ -40,15 +40,21 @@ public class App {
         AnnotationConfigApplicationContext context2 = new AnnotationConfigApplicationContext(ScannerConfiguration.class);
         StudentManagement manger = context2.getBean(StudentManagement.class);
         ScannerInputService inputService = context2.getBean(ScannerInputService.class);
-        Student student = manger.create();
-        System.out.println(student.toString());
+        System.out.println("First one");
+        Student student1 = manger.create();
+        System.out.println("second one ");
+        Student student2 = manger.create();
         System.out.println("-----------------------------------------------");
-        System.out.println(manger.save(student)+" Has been saved!");
+        System.out.println(manger.save(student1)+" Has been saved!");
+        System.out.println(manger.save(student2)+" Has been saved!");
         System.out.println("-----------------------------------------------");
         System.out.println("Finding by ID "+manger.find(1));
         System.out.println("-----------------------------------------------");
-        System.out.println("removing student with the giving ID"+manger.remove(1));
+//        System.out.println("removing student with the giving ID"+manger.remove(1));
         System.out.println("-----------------------------------------------");
+        System.out.println("Finding All "+ manger.findAll());
+        System.out.println("-----------------------------------------------");
+        System.out.println("Editing Student "+manger.edit(student1));
 
 
 

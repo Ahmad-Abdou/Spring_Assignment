@@ -13,14 +13,11 @@ public class StudentDaoImp implements  StudentDao{
 
     @Override
     public Student saveOrUpdate(Student student) {
-        if(student.getId() == 0){
+        if (student.getId() == 0){
             student.setId(StudentSequencer.nextId());
-            list.add(student);
         }
-        else {
-            Student student1 = findById(student.getId());
-            student1.setName(student.getName());
-        }
+        list.add(student);
+
         return student;
     }
 

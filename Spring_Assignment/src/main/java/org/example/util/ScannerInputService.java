@@ -17,7 +17,7 @@ public class ScannerInputService implements UserInputService{
 
     @Override
     public String getString() {
-        System.out.println("Enter Name : ");
+        System.out.print("Enter Name of the student: ");
         String input = scanner.nextLine();
         return input;
     }
