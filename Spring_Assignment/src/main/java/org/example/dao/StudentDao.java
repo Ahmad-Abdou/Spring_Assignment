@@ -6,7 +6,7 @@ import java.util.List;
 
 
 public interface StudentDao {
-    Student saveOrUpdate(Student appUser);
+    Student saveOrUpdate(Student student);
 
     Student findById(int id);
 

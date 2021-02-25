@@ -29,7 +29,6 @@ public class StudentDaoImp implements  StudentDao{
         if(id == 0){
             throw  new IllegalArgumentException("id should not be 0");
         }
-
         return list.stream().filter(student -> student.getId() == id).findFirst().orElse(null);
     }
 

@@ -3,23 +3,29 @@ package org.example.util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component("scannerInputService")
+import java.util.Scanner;
+
+@Component
 public class ScannerInputService implements UserInputService{
 
-    ScannerConfiguration  scannerConfiguration;
+  Scanner scanner;
 
-    @Autowired
-    public void setScannerConfiguration(ScannerConfiguration scannerConfiguration) {
-        this.scannerConfiguration = scannerConfiguration;
+     @Autowired
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
     }
 
     @Override
     public String getString() {
-        return "String from Scanner input service";
+        System.out.println("Enter Name : ");
+        String input = scanner.nextLine();
+        return input;
     }
 
     @Override
     public int getInt() {
-        return 1;
+        System.out.println("Enter Number");
+        int input = scanner.nextInt();
+        return input;
     }
 }
